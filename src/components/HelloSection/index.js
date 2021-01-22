@@ -13,7 +13,13 @@ function HelloSection({ isInvitation }) {
       <div css={styWrapper(false)} className="bg__secondary">
         <div className="container" style={{ paddingTop: '2em' }}>
           <WithAnimation>
-            <img className="img__center" src={ImgBrideAndGroom} alt="" style={{ maxWidth: '300px' }} />
+            <div className="text__salam">
+              <h4>Assalamualaikum Wr. Wb</h4>
+              <p className="center" style={{ marginBottom: '28px' }}>
+                Dengan memohon Rahmat dan Ridho Allah Subhanahu Wa Ta'ala, <br /> Kami bermaksud menyelenggarakan
+                pernikahan putra-putri kami:
+              </p>
+            </div>
           </WithAnimation>
           <div className="row">
             <WithAnimation delay={300}>

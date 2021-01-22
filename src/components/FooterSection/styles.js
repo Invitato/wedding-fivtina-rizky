@@ -1,17 +1,31 @@
 import { css } from '@emotion/core';
-import Background from '../Covid19/assets/bg.jpg';
+import Background from '@assets/img/pattern-2.png';
 
-export const styWrapper = css`
-  background-image: url(${Background});
-  background-size: cover;
-  background-position: top;
+export const styWrapper = (withBackground = true) => css`
+  background-color: var(--secondary-bg);
   width: 100%;
+  padding-bottom: 1px;
+
+  ${withBackground &&
+  `background-image: url(${Background});
+  background-position: bottom;
+  background-repeat-y: no-repeat;
+  background-position-x: center;
+  background-size: contain;`}
 
   .img__arrow {
     display: block;
     margin: 0 auto;
     width: 100%;
     filter: brightness(0.5);
+  }
+
+  .border {
+    margin-top: -16px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid var(--font-primary);
+    width: 50%;
   }
 
   .sub-title {
@@ -24,6 +38,10 @@ export const styWrapper = css`
 
   .parent {
     margin: -16px 16px 16px 16px;
+  }
+
+  .copy-right {
+    margin-bottom: 6em;
   }
 
   p {

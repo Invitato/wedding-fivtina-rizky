@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import Background from './assets/bg.jpg';
+import Background from '@assets/img/default.jpg';
 
 export const styWrapper = css`
   padding: var(--size-content-padding);
@@ -7,7 +7,6 @@ export const styWrapper = css`
   background-size: cover;
   background-position: center;
   width: 100%;
-  min-height: 70vh;
   color: var(--font-black-ui);
 
   .bismillah {
@@ -16,7 +15,7 @@ export const styWrapper = css`
 
   .text__sub {
     font-size: 16px;
-    color: var(--font-black-ui);
+    color: var(--font-primary);
 
     @media screen and (max-width: 400px) {
       font-size: 15px !important;
@@ -40,17 +39,20 @@ export const styWrapper = css`
 
 export const styEventBox = css`
   border: 2px solid var(--font-primary);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 16px;
   width: 100%;
   display: block;
   margin-bottom: 16px;
+  border-radius: 8px;
+  color: var(--font-primary);
 
   h3 {
     padding-bottom: 16px;
-    text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 2.5rem;
     border-bottom: 1px solid var(--font-primary);
+    font-family: var(--font-family-title);
+    color: var(--font-primary);
   }
 
   .box__col {

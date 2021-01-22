@@ -21,6 +21,14 @@
 body {
   font-family: var(--font-family-content);
   color: var(--font-primary) !important;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 768px;
 }
 
 /**
@@ -120,7 +128,9 @@ body {
 
 a {
   font-weight: bold;
+  color: var(--font-primary);
 }
+
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;

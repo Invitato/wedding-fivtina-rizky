@@ -2,7 +2,6 @@ import { css } from '@emotion/core';
 import Background from '@assets/img/pattern.png';
 
 export const styWrapper = css`
-  min-height: 90vh;
   padding: var(--size-content-padding);
   background: var(--secondary-bg);
   background-image: url(${Background});
@@ -41,7 +40,7 @@ export const styWrapper = css`
   .text__latin {
     color: var(--font-primary);
     font-size: 14px;
-    margin-bottom: 10em;
+    margin-bottom: 12em;
   }
 
   @media screen and (max-width: 500px) {

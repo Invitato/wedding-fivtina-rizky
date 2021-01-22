@@ -10,7 +10,7 @@ const REFERER = {
 function CopyRight() {
   return (
     <footer>
-      <div className="container">
+      <div className="container copy-right">
         <div className="row">
           <div className="col-md-12 text-center">
             <p style={{ fontSize: '12px' }}>

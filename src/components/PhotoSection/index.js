@@ -14,7 +14,7 @@ function PhotoSection() {
             <div className="row">
               <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
                 <h2 className="main-font pr-co" style={{ animation: CUSTOM_ANIMATION }}>
-                  {THE_BRIDE}
+                  Our Moments
                 </h2>
               </div>
             </div>

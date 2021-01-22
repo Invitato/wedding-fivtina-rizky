@@ -6,6 +6,15 @@ export const styWrapper = (withBackground) => css`
   padding: var(--size-content-padding);
   background-color: #fefdfd;
 
+  .text__salam {
+    text-align: center;
+    color: var(--font-primary);
+
+    h4 {
+      color: var(--font-primary);
+    }
+  }
+
   ${withBackground &&
   `
     background-image: url(${Background});

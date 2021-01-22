@@ -16,16 +16,14 @@ import { styWrapper } from './styles';
 
 function WeddingSection({ isInvitation }) {
   return (
-    <div css={styWrapper}>
+    <div id="fh5co-started" css={styWrapper}>
+      <div className="overlay" />
       <div className="container">
         <div className="row">
           <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
             <WithAnimation>
-              <h3 className="main-font color__primary text__title">Assalamualaikum Wr. Wb</h3>
-              <p className="text__sub">
-                Tanpa mengurangi rasa hormat, dengan ini kami mengundang Bapak/ Ibu/ Saudara(i) untuk hadir pada acara
-                resepsi pernikahan kami:
-              </p>
+              <h3 className="main-font color__primary text__title">Akad Nikah & Resepsi</h3>
+              <p className="text__sub">Insya Allah akan diselenggarakan pada:</p>
             </WithAnimation>
           </div>
         </div>

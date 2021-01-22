@@ -13,10 +13,12 @@ function LocationSection() {
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <WithAnimation>
                 <p className="sub-title">
-                  <strong className="main-font text__title">Lokasi Acara</strong>
+                  <strong className="main-font text__title" style={{ marginTop: '24px' }}>
+                    Lokasi Acara
+                  </strong>
                   <br />
                 </p>
-                <p style={{ fontSize: '14px' }}>{GOOGLE_MAPS_ADDRESS}</p>
+                <p style={{ fontSize: '1.3rem', margin: '0' }}>{GOOGLE_MAPS_ADDRESS}</p>
               </WithAnimation>
             </div>
           </div>
@@ -39,7 +41,7 @@ function LocationSection() {
           </div>
           <div className="row text-center">
             <WithAnimation delay={200}>
-              <button className="btn btn-primary" style={{ marginTop: '16px' }}>
+              <button className="btn btn-primary" style={{ marginTop: '16px', border: 'none' }}>
                 <a href={GOOGLE_MAPS_LINK} target="_blank" rel="noreferrer">
                   Google Maps
                 </a>
