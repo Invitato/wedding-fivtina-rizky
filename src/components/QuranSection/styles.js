@@ -1,12 +1,13 @@
 import { css } from '@emotion/core';
-import Background from './assets/bg.jpg';
+import Background from '@assets/img/pattern.png';
 
 export const styWrapper = css`
+  min-height: 90vh;
   padding: var(--size-content-padding);
-  background: #fefdfd;
-  background-size: cover;
+  background: var(--secondary-bg);
   background-image: url(${Background});
-  background-position: center;
+  background-position: bottom;
+  background-repeat-y: no-repeat;
 
   .title {
     font-size: 4em;
@@ -34,12 +35,13 @@ export const styWrapper = css`
     margin-top: 2em;
     font-size: 20px;
     line-height: 2;
-    color: var(--font-black-ui);
+    color: var(--font-primary);
   }
 
   .text__latin {
-    color: var(--font-black-ui);
+    color: var(--font-primary);
     font-size: 14px;
+    margin-bottom: 10em;
   }
 
   @media screen and (max-width: 500px) {
