@@ -17,9 +17,8 @@ export const BOY_PARENT_NAME = `Putra dari Bapak Muhammad Syawal Darwis (Alm.) &
 /**
  * @constants - SEO Requirement
  */
-export const SEO_IMAGE =
-  'https://user-images.githubusercontent.com/10141928/101640360-fd8cc800-3a62-11eb-828d-7f7085e43953.jpg';
-export const SEO_URL = 'https://invitato.net/wedding-reni-rizky/';
+export const SEO_IMAGE = '';
+export const SEO_URL = 'https://invitato.net/';
 export const SEO_TITLE = `The Wedding of ${THE_BRIDE} by Invitato.net`;
 export const SEO_DESCRIPTION = `Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan. - ${THE_BRIDE}`;
 
