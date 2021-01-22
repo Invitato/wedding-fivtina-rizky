@@ -23,7 +23,8 @@ export const styWrapper = (withBackground) => css`
 
   .parent {
     margin: -16px 16px 16px 16px;
-    color: var(--font-black-ui);
+    color: var(--font-primary);
+    font-weight: bold;
   }
 
   p {

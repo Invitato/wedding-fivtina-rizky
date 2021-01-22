@@ -8,11 +8,11 @@ export const IS_USE_PHOTO_WEDDING = false;
  * @constants
  * for Brides information
  */
-export const THE_BRIDE = 'Reni + Rizky';
-export const GIRL_NAME = 'Reni Savira Utami, S.H';
-export const GIRL_PARENT_NAME = `Putri dari Bapak H. Sateno, S.H, M.H<br /> & Hj. Kasminem`;
-export const BOY_NAME = 'Rizky Agus Triyanto, S.Kom';
-export const BOY_PARENT_NAME = `Putra dari Bapak Drs. H. Subandi<br />& Hj. Lilik Haryanti Pujiastuti`;
+export const THE_BRIDE = 'Fivtina & Rizky';
+export const GIRL_NAME = 'Fivtina Marbelanty, S.E., CRP';
+export const GIRL_PARENT_NAME = `Putri dari Bapak Salamuddin<br /> & Ibu Inda Mersala`;
+export const BOY_NAME = 'Muhammad Rizky Pratama, S.T.';
+export const BOY_PARENT_NAME = `Putra dari Bapak Muhammad Syawal Darwis (Alm.) & Ibu Herlina`;
 
 /**
  * @constants - SEO Requirement
@@ -27,9 +27,10 @@ export const SEO_DESCRIPTION = `Dengan memohon Rahmat dan Ridho Illahi, teriring
  * @constants - google maps
  * for google maps configuration
  */
-export const GOOGLE_MAPS_LINK = `https://goo.gl/maps/QZdXKXXZPRhJviYW8`;
-export const GOOGLE_MAPS_EMBED = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.219059321957!2d110.4429384142868!3d-6.983455370326392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708cb76c98241f%3A0x6afb73af24d41bf9!2sGrand%20Mosque%20of%20Central%20Java!5e0!3m2!1sen!2sid!4v1607523454264!5m2!1sen!2sid`;
-export const GOOGLE_MAPS_ADDRESS = 'Jl. Gajah Raya, Sambirejo, Kec. Gayamsari, Kota Semarang, Jawa Tengah 50166';
+export const GOOGLE_MAPS_LINK = `https://goo.gl/maps/dG427x8mQ8dNbJFu5`;
+export const GOOGLE_MAPS_EMBED = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2612350959166!2d110.4138452147732!3d-6.9784720949586205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b52677c1227%3A0x6f87324171d2ec67!2sPO%20Hotel%20Semarang!5e0!3m2!1sid!2sid!4v1611316428381!5m2!1sid!2sid`;
+export const GOOGLE_MAPS_ADDRESS = ' Jl. Pemuda No.118, Semarang';
+
 
 /**
  * @constants - epoch time
@@ -37,19 +38,19 @@ export const GOOGLE_MAPS_ADDRESS = 'Jl. Gajah Raya, Sambirejo, Kec. Gayamsari, K
  * use this website for convert local time to epoch time
  * https://www.epochconverter.com/
  */
-export const EPOCH_START_EVENT = 1609203600;
-export const EPOCH_END_EVENT = 1609221600;
+export const EPOCH_START_EVENT = 1613869200;
+export const EPOCH_END_EVENT = 1613887200;
 
 /**
  * @constants - wedding information
  */
-export const WEDDING_AKAD = 'Selasa, 29 Desember 2020';
+export const WEDDING_AKAD = 'Minggu, 21 Januari 2021';
 export const WEDDING_AKAD_TIME = '08:00 WIB';
-export const WEDDING_RESEPSI = 'Selasa, 29 Desember 2020';
-export const WEDDING_RESEPSI_TIME = '12:00 - 13:00 WIB';
-export const WEDDING_LOCATION = `Convention Hall, <br /> Masjid Agung Jawa Tengah`;
+export const WEDDING_RESEPSI = 'Minggu, 21 Januari 2021';
+export const WEDDING_RESEPSI_TIME = '11.00 - 13:00 WIB';
+export const WEDDING_LOCATION = `PO Hotel Semarang, Jl. Pemuda No.118`;
 export const WEDDING_LOCATION_AKAD = WEDDING_LOCATION;
-export const WEDDING_DATE = '29.12.2020';
+export const WEDDING_DATE = '21.02.2021';
 
 /**
  * @constants
