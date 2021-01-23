@@ -9,8 +9,9 @@ export const styWrapper = (withBackground = true) => css`
   ${withBackground &&
   `background-image: url(${Background});
   background-position: bottom;
+  background-repeat: no-repeat;
   background-repeat-y: no-repeat;
-  background-position-x: center;
+  background-repeat-x: repeat;
   background-size: contain;`}
 
   .img__arrow {

@@ -6,7 +6,10 @@ export const styWrapper = css`
   background: var(--secondary-bg);
   background-image: url(${Background});
   background-position: bottom;
+  background-repeat: no-repeat;
   background-repeat-y: no-repeat;
+  background-repeat-x: repeat;
+  background-size: contain;
 
   .title {
     font-size: 4em;
