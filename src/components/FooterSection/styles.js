@@ -12,7 +12,7 @@ export const styWrapper = (withBackground = true) => css`
   background-repeat: no-repeat;
   background-repeat-y: no-repeat;
   background-repeat-x: repeat;
-  background-size: contain;`}
+  background-size: auto;`}
 
   .img__arrow {
     display: block;

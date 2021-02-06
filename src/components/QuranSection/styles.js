@@ -9,7 +9,7 @@ export const styWrapper = css`
   background-repeat: no-repeat;
   background-repeat-y: no-repeat;
   background-repeat-x: repeat;
-  background-size: contain;
+  background-size: auto;
 
   .title {
     font-size: 4em;
