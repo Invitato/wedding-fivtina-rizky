@@ -4,12 +4,14 @@ import { bool } from 'prop-types';
 import WithAnimation from '../WithAnimation';
 import CopyRight from './CopyRight';
 import EmbedLive from './EmbedLive';
+import GiftCard from '../GiftCard';
 import { styWrapper } from './styles';
 
 function FooterSection({ isInvitation }) {
   return (
     <>
       <EmbedLive />
+      <GiftCard />
       <div css={styWrapper}>
         <div className="secondary-bg" style={{ padding: '0 16px' }}>
           <div className="row padding__content">
