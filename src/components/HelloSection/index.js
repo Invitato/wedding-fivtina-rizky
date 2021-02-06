@@ -6,6 +6,8 @@ import { GIRL_NAME, GIRL_PARENT_NAME, BOY_NAME, BOY_PARENT_NAME } from '@/consta
 import WithAnimation from '../WithAnimation';
 import ImgBrideAndGroom from './img/img-rizky.png';
 import { styWrapper } from './styles';
+import Bride from './img/fivtina.jpeg';
+import Grom from './img/Rizky.jpeg';
 
 function HelloSection({ isInvitation }) {
   return (
@@ -24,6 +26,7 @@ function HelloSection({ isInvitation }) {
           <div className="row">
             <WithAnimation delay={300}>
               <div className="col-md-8 col-md-offset-2 text-center">
+                <img src={Bride} className="img__bride" />
                 <h3 className="main-font text__bride">{GIRL_NAME}</h3>
                 <p className="parent" dangerouslySetInnerHTML={{ __html: GIRL_PARENT_NAME }} />
               </div>
@@ -37,6 +40,7 @@ function HelloSection({ isInvitation }) {
           <div className="row">
             <WithAnimation delay={500}>
               <div className="col-md-8 col-md-offset-2 text-center">
+                <img src={Grom} className="img__bride" />
                 <h3 className="main-font text__groom">{BOY_NAME}</h3>
                 <p className="parent" dangerouslySetInnerHTML={{ __html: BOY_PARENT_NAME }} />
               </div>

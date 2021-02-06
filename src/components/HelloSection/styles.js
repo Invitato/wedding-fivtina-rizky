@@ -55,7 +55,7 @@ export const styWrapper = (withBackground) => css`
   .img__bride,
   .img__grom {
     border-radius: 50%;
-    max-width: 140px;
+    max-width: 160px;
     margin-bottom: 16px;
   }
 
