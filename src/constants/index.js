@@ -12,7 +12,7 @@ export const THE_BRIDE = 'Fivtina & Rizky';
 export const GIRL_NAME = 'Fivtina Marbelanty, S.E., CRP';
 export const GIRL_PARENT_NAME = `Putri dari Bapak Salamuddin<br /> & Ibu Inda Mersala`;
 export const BOY_NAME = 'Muhammad Rizky Pratama, S.T.';
-export const BOY_PARENT_NAME = `Putra dari Bapak Muhammad Syawal Darwis (Alm.) & Ibu Herlina`;
+export const BOY_PARENT_NAME = `Putra dari Bapak Muhammad Syawal Darwis (Alm.) <br />& Ibu Herlina`;
 
 /**
  * @constants - SEO Requirement
@@ -72,3 +72,6 @@ export const URL_INVITATO = 'https://invitato.net';
 export const URL_IG_INVITATO = 'https://www.instagram.com/dindadipoyono/';
 export const URL_WA_INVITATO =
   'https://wa.me/+628112778189?text=Hi%20Kak,%20aku%20mau%20pesan%20undangan%20online%20nih!';
+
+export const API_HOSTNAME =
+  'https://script.google.com/macros/s/AKfycbwFLOQwcLZkTf36FmpJhZI7KJ_x4r5Hk9TZTD3zpCL3Sos_C69AQtAkiA/exec';

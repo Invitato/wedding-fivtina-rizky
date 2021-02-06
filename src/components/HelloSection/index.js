@@ -14,9 +14,9 @@ function HelloSection({ isInvitation }) {
         <div className="container" style={{ paddingTop: '2em' }}>
           <WithAnimation>
             <div className="text__salam">
-              <h4>Assalamualaikum Wr. Wb</h4>
+              <h4>Assalaamu'alaikum Warahmatullaahi Wabarakaatuh</h4>
               <p className="center" style={{ marginBottom: '28px' }}>
-                Dengan memohon Rahmat dan Ridho Allah Subhanahu Wa Ta'ala, <br /> Kami bermaksud menyelenggarakan
+                Dengan memohon Rahmat dan Ridho Allah Subḥānahu Wa Ta’ālā, <br /> Kami bermaksud menyelenggarakan
                 pernikahan putra-putri kami:
               </p>
             </div>

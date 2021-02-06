@@ -12,7 +12,7 @@ function HelloSection({ isInvitation }) {
           <div className="row" style={{ paddingTop: '2em' }}>
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <WithAnimation delay={500}>
-                <h3 className="text__title main-font">Bismillahirrahmanirrahim</h3>
+                <h3 className="text__title main-font">Bismillaahirrahmaanirrahiim</h3>
               </WithAnimation>
               <WithAnimation delay={700}>
                 <p className="text__arabic">
