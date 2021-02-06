@@ -21,8 +21,6 @@
 body {
   font-family: var(--font-family-content);
   color: var(--font-primary) !important;
-  width: 100%;
-  max-width: 768px;
   margin: 0 auto;
 }
 

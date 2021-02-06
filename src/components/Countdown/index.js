@@ -14,16 +14,16 @@ function CountContainer({ lang }) {
    * render alternative link
    * if user can't play directly via Youtube Embed link
    */
-  // if (timeHasRunOut && !isEventOver) {
-  //   return (
-  //     <div style={{ marginBottom: '16px' }}>
-  //       Klik link berikut jika anda tidak bisa putar video: <br />
-  //       <a href={YOUTUBE_LINK} target="_blank" rel="noreferrer">
-  //         {`Youtube Live Akad  ${THE_BRIDE}`}
-  //       </a>
-  //     </div>
-  //   );
-  // }
+  if (timeHasRunOut && !isEventOver) {
+    return (
+      <div style={{ marginBottom: '16px' }}>
+        Klik link berikut jika anda tidak bisa putar video: <br />
+        <a href={YOUTUBE_LINK} target="_blank" rel="noreferrer">
+          {`Youtube Live Akad  ${THE_BRIDE}`}
+        </a>
+      </div>
+    );
+  }
 
   if (timeHasRunOut) return null;
 

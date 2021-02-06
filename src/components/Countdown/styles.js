@@ -10,11 +10,11 @@ export const styWrapperCount = css`
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: var(--secondary-bg);
+  background-color: var(--font-primary);
   margin: 8px;
   border-radius: 50%;
   position: relative;
-  color: var(--font-primary);
+  color: var(--secondary-bg);
   animation: pulse 1s infinite alternate;
   
   span {

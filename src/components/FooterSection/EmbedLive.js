@@ -2,8 +2,9 @@ import React from 'react';
 import CountContainer from '../Countdown';
 import WithAnimation from '../WithAnimation';
 
+import Countdown from '../Countdown';
+import { THE_BRIDE, WEDDING_AKAD, WEDDING_AKAD_TIME, YOUTUBE_EMBED } from '@/constants';
 import { styWrapper } from './styles';
-import { THE_BRIDE, WEDDING_AKAD, WEDDING_AKAD_TIME } from '@/constants';
 
 function EmbedLive() {
   const title = `Live Wedding ${THE_BRIDE}`;
@@ -16,13 +17,14 @@ function EmbedLive() {
               <h3 className="pr-co main-font" style={{ marginTop: '2em', fontSize: '3rem' }}>
                 {title}
               </h3>
+              <Countdown />
               <p>{`Live: ${WEDDING_AKAD_TIME} | ${WEDDING_AKAD}`}</p>
             </WithAnimation>
             <iframe
               title={title}
               width="100%"
-              height="400"
-              src="https://www.youtube.com/embed/6xbFq_sBiuQ"
+              height="315"
+              src={YOUTUBE_EMBED}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

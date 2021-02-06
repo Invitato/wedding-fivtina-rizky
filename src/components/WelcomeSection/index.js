@@ -3,8 +3,6 @@ import { object, string, bool, func } from 'prop-types';
 import { animateScroll } from 'react-scroll';
 
 import { THE_BRIDE } from '@/constants';
-
-import Countdown from '../Countdown';
 import WithAnimation from '../WithAnimation/UseIntersect';
 import ScrollToDown from './ScrollToDown';
 
@@ -59,7 +57,6 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
                 <img src={WeddingImg} alt="wedding-dinda-indra" />
                 <h2 className="text__date">The wedding of</h2>
                 <h1>{THE_BRIDE}</h1>
-                <Countdown />
               </WithAnimation>
             </div>
           </div>
