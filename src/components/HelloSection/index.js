@@ -6,7 +6,7 @@ import { GIRL_NAME, GIRL_PARENT_NAME, BOY_NAME, BOY_PARENT_NAME } from '@/consta
 import WithAnimation from '../WithAnimation';
 import ImgBrideAndGroom from './img/img-rizky.png';
 import { styWrapper } from './styles';
-import Bride from './img/fivtina.jpeg';
+import Bride from './img/Fivtina.jpeg';
 import Grom from './img/Rizky.jpeg';
 
 function HelloSection({ isInvitation }) {
