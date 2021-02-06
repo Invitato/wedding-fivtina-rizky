@@ -56,7 +56,7 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
               <WithAnimation>
                 <img src={WeddingImg} alt="wedding-dinda-indra" />
                 <h2 className="text__date">The wedding of</h2>
-                <h1>{THE_BRIDE}</h1>
+                <h1 style={{ fontFamily: 'Tangerine, sans-serif' }}>{THE_BRIDE}</h1>
               </WithAnimation>
             </div>
           </div>

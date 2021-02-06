@@ -1,5 +1,5 @@
 import { css, keyframes } from '@emotion/core';
-import Background from '@assets/img/default.jpg';
+import Background from './assets/desktop.jpeg';
 
 export const styHero = css`
   width: 100%;
@@ -165,7 +165,7 @@ export const styWrapper = css`
     line-height: 1.5;
     font-family: var(--font-family-title);
     color: #fff;
-    font-size: 3.5em;
+    font-size: 10rem;
   }
 
   h2 {
@@ -191,8 +191,9 @@ export const styWrapper = css`
     font-size: 2.5rem;
     font-weight: normal;
     margin-bottom: -3rem;
-    font-family: var(--font-family-title);
     margin-top: 1rem;
+    margin-bottom: -2rem;
+    text-transform: uppercase;
   }
 
   .to-dearest {
@@ -223,7 +224,15 @@ export const styWrapper = css`
     font-size: 3.5em;
   }
 
-  @media screen and (max-width: 330px) {
+  @media screen and (max-width: 500px) {
+    h1 {
+      font-size: 6rem;
+    }
+
+    .text__date {
+      font-size: 1.5rem;
+    }
+
     img {
       max-width: 40px;
       margin-top: 24px;

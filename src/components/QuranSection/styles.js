@@ -11,6 +11,10 @@ export const styWrapper = css`
   background-repeat-x: repeat;
   background-size: auto;
 
+  @media screen and (max-width: 500px) {
+    min-height: 100vh;
+  }
+
   .title {
     font-size: 4em;
   }
