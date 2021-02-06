@@ -8,14 +8,14 @@ export const styWrapper = css`
 
 export const styWrapperCount = css`
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: var(--font-primary);
-  margin: 8px;
+  margin: 8px 8px 16px 8px;
   border-radius: 50%;
   position: relative;
   color: var(--secondary-bg);
-  animation: pulse 1s infinite alternate;
+  animation: pulse 2s infinite alternate;
   
   span {
     font-weight: bold;
@@ -24,9 +24,9 @@ export const styWrapperCount = css`
   }
 
   h3 {
-    font-size: 28px;
+    font-size: 24px;
     color: var(--font-primary);
-    font-weight: bold;
+    font-weight: normal;
     margin: 20px 0 0 0;
   }
 
