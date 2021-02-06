@@ -26,6 +26,8 @@ export const styWrapperItem = css`
     margin: -10px 0 1em 0;
   }
 
+  padding: 0 16px;
+
   blockquote {
     margin-top: 16px !important;
   }
@@ -48,10 +50,13 @@ export const styWrapperItem = css`
   .description {
     font-size: 16px !important;
     text-align: left;
+    color: black;
   }
 
   .author {
     text-align: left;
+    margin-top: -16px;
+    color: black;
   }
 
   @media screen and (max-width: 400px) {
@@ -68,14 +73,18 @@ export const styButtonWrapper = css`
   .button-nav {
     font-size: 14px;
     padding: 5px 20px;
+    background: var(--secondary-bg);
+    color: var(--font-primary);
   }
 `;
 
 export const styWrapper = css`
-  background-image: url(${Background});
-  background-size: cover;
-  background-position: bottom;
-  min-height: 10vh;
+  @media screen and (max-width: 500px) {
+    background-image: url(${Background});
+    background-size: cover;
+    background-position: bottom;
+    min-height: 10vh;
+  }
 `;
 
 export const styForm = css`

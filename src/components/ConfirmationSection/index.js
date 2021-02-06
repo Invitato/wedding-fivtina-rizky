@@ -75,7 +75,7 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
         setAttended('');
         setHP('');
         setAddress('');
-        setTotalGuest('')
+        setTotalGuest('');
       } else {
         setShowAlert({ ...ALERT, error: false });
         alert('Gagal submit data, silahkan coba lagi!');
@@ -115,7 +115,9 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
         <WithAnimation>
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <h2 className="main-font color__primary">Konfirmasi Kehadiran</h2>
+              <h2 className="main-font color__primary" style={{ marginTop: '20px' }}>
+                Konfirmasi Kehadiran
+              </h2>
               <form className="my_form" onSubmit={handleSubmitForm}>
                 {renderAlert()}
                 <div className="form-group">
@@ -172,7 +174,7 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
                   </div>
                 )}
                 <button type="submit" value="Submit" className="btn btn-default buttonForm">
-                  {loading ? 'Memproses...' : 'Submit'}
+                  {loading ? 'Memproses...' : 'Kirim'}
                 </button>
               </form>
             </div>

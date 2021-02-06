@@ -11,9 +11,11 @@ function WishesItem({ image, name, infoName, description, isActive }) {
         <div className={`testimony-slide text-center ${isActive ? 'active' : 'hide'}`}>
           <blockquote>
             <p className="description">
-              <i>{`"${description}"`}</i>
+              <i>{description}</i>
             </p>
-            <p className="author">{`Dari ${name}`}</p>
+            <p className="author">
+              dari <b>{name}</b>
+            </p>
           </blockquote>
         </div>
       </div>

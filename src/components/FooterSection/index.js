@@ -19,7 +19,7 @@ function FooterSection({ isInvitation }) {
               <WithAnimation>
                 <p>
                   Sehubungan dengan kondisi saat ini mengenai pembatasan jumlah tamu undangan, <br />
-                  tanpa mengurangi rasa hormat, kami mohon segala doa dan restu dari bapak/ ibu/saudara/i, <br />
+                  tanpa mengurangi rasa hormat, kami mohon segala doa dan restu dari Bapak/Ibu/Saudara/i, <br />
                   dan kami berharap tetap dapat menjalin tali silaturahmi melalui media online.
                 </p>
               </WithAnimation>

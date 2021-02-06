@@ -6,11 +6,9 @@ import { styButtonWrapper } from './styles';
 
 const INTERVAL_SLIDE = 35000;
 
-function WishesContainer() {
+function WishesContainer({ wishlist }) {
   const [active, setActive] = useState(0);
   const [pauseSlide, setPauseSlide] = useState(false);
-  const [wishlist, setWishlist] = useState([]);
-  const [loading, setLoading] = useState(false);
   const totalWishes = wishlist.length || 0;
 
   const calledAPI = useRef(false);
@@ -45,49 +43,15 @@ function WishesContainer() {
     }
   }, [active]);
 
-  const getData = async () => {
-    setLoading(true);
-
-    try {
-      const options = {
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        method: 'GET',
-      };
-
-      const rawResult = await fetch(`${API_HOSTNAME}?action=read&tableName=ucapan`, options);
-      const response = await rawResult.json();
-
-      if (response.success) {
-        setWishlist(response.data || []);
-      } else {
-        console.log('=> GAGAL');
-      }
-
-      setLoading(false);
-    } catch (e) {
-      setLoading(false);
-    }
-
-    calledAPI.current = true;
-  };
-
   const renderWishlist = () => {
     return wishlist.map((w, index) => (
       <WishesItem key={index} name={w.nama} description={w.ucapan} isActive={index === active} />
     ));
   };
 
-  /** Side effect to autoscroll */
-  useEffect(() => {
-    getData();
-  }, []);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!pauseSlide && !calledAPI.current) {
+      if (!pauseSlide) {
         handleSetNext();
       } else {
         clearInterval(interval);
@@ -96,8 +60,6 @@ function WishesContainer() {
 
     return () => clearInterval(interval);
   }, [handleSetNext, pauseSlide]);
-
-  if (loading) return <div>Memproses data..</div>;
 
   if (wishlist.length === 0) return null;
 

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import WishesContainer from './WishesContainer';
 import { styWrapper, styForm } from './styles';
 import { API_HOSTNAME } from '@/constants';
+import { wishlist } from './wishlist-data';
 
 const ALERT = {
   success: false,
@@ -10,14 +11,47 @@ const ALERT = {
 
 function WishesSection() {
   const [loading, setLoading] = useState(false);
+  const [loadingGet, setLoadingGet] = useState(false);
   const [showAlert, setShowAlert] = useState(ALERT);
+  const [wishlist, setWishlist] = useState([]);
 
   const [name, setName] = useState('');
   const [ucapan, setUcapan] = useState('');
+  const calledOne = useRef(false);
 
   const handleSetState = (e, setState) => {
     const value = e.target.value;
     setState(value);
+  };
+
+  const getData = async () => {
+    setLoadingGet(true);
+
+    try {
+      const options = {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        method: 'GET',
+      };
+
+      const rawResult = await fetch(`${API_HOSTNAME}?action=read&tableName=ucapan`, options);
+      const response = await rawResult.json();
+
+      if (response.success) {
+        setWishlist(response.data || []);
+      } else {
+        console.log('=> GAGAL');
+      }
+
+      setLoadingGet(false);
+    } catch (e) {
+      setLoadingGet(false);
+    }
+
+    setLoadingGet(false);
+    calledOne.current = true;
   };
 
   const handleSubmit = async (e) => {
@@ -41,6 +75,7 @@ function WishesSection() {
         setShowAlert({ ...ALERT, success: true });
         setName('');
         setUcapan('');
+        getData();
       } else {
         setShowAlert({ ...ALERT, error: false });
         alert('Gagal submit data, silahkan coba lagi!');
@@ -58,7 +93,7 @@ function WishesSection() {
     if (showAlert.success) {
       return (
         <div className="alert alert-success" role="alert">
-          <b>Data berhasil disubmit ke database kami</b>. <br /> Terima kasih atas konfirmasinya! :)
+          <b>Data berhasil disubmit ke database kami</b>. <br /> Terima kasih atas ucapan dan doanya! :)
         </div>
       );
     }
@@ -73,6 +108,13 @@ function WishesSection() {
 
     return null;
   };
+
+  /** Side effect to autoscroll */
+  useEffect(() => {
+    if (!calledOne.current) {
+      getData();
+    }
+  }, []);
 
   return (
     <>
@@ -113,7 +155,7 @@ function WishesSection() {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <WishesContainer />
+              {loadingGet ? <p className="text-center">Memproses data..</p> : <WishesContainer wishlist={wishlist} />}
             </div>
           </div>
         </div>
