@@ -3,18 +3,29 @@ import { string, bool } from 'prop-types';
 import { Link } from 'gatsby';
 
 import WithAnimation from '../WithAnimation';
+import useDateCountdown from '@/hooks/useDateCountdown';
 import { API_HOSTNAME } from '@/constants';
 import { styWrapper, styFlex } from './styles';
 
 const HADIR = 'Hadir';
 const TIDAK_HADIR = 'Tidak bisa hadir';
+const ALERT = {
+  success: false,
+  error: false,
+};
 
 function ConfirmationSection({ isInvitation, guestName, codeLink }) {
+  const { timeHasRunOut } = useDateCountdown();
+
   const [name, setName] = useState('');
   const [hp, setHP] = useState('');
   const [address, setAddress] = useState('');
   const [attended, setAttended] = useState(HADIR);
-  const [totalGuest, setTotalGuest] = useState(true);
+  const [totalGuest, setTotalGuest] = useState('1');
+  const [showAlert, setShowAlert] = useState(ALERT);
+  const [loading, setLoading] = useState(false);
+
+  if (timeHasRunOut) return null;
 
   const handleSetForm = (e, setState) => {
     const value = e.target.value;
@@ -23,6 +34,7 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
+    if (loading) return;
 
     if (!name) {
       alert('Nama tidak boleh kosong');
@@ -39,11 +51,14 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
       return;
     }
 
+    setLoading(true);
+
     try {
+      const config = `tableName=tamu&action=insert`;
       const rawResult = await fetch(
-        `${API_HOSTNAME}?nama=${encodeURIComponent(name)}&alamat=${encodeURIComponent(address)}&hp=${encodeURIComponent(
-          hp,
-        )}&hadir=${encodeURIComponent(attended)}&jumlah_tamu=${totalGuest}`,
+        `${API_HOSTNAME}?${config}&nama=${encodeURIComponent(name)}&alamat=${encodeURIComponent(
+          address,
+        )}&hp=${encodeURIComponent(hp)}&hadir=${encodeURIComponent(attended)}&jumlah_tamu=${totalGuest}`,
         {
           headers: {
             Accept: 'application/json',
@@ -53,16 +68,40 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
         },
       );
 
-      const response = rawResult.json();
+      const response = await rawResult.json();
       if (response.success) {
-        alert('Data berhasil disubmit');
+        setShowAlert({ ...ALERT, success: true });
       } else {
+        setShowAlert({ ...ALERT, error: false });
         alert('Gagal submit data, silahkan coba lagi!');
       }
+
+      setLoading(false);
     } catch (e) {
-      console.error(e);
+      setLoading(false);
+      setShowAlert({ ...ALERT, error: false });
       alert('Gagal submit data, silahkan coba lagi!');
     }
+  };
+
+  const renderAlert = () => {
+    if (showAlert.success) {
+      return (
+        <div className="alert alert-success" role="alert">
+          <b>Data berhasil disubmit ke database kami</b>. <br /> Terima kasih atas konfirmasinya! :)
+        </div>
+      );
+    }
+
+    if (showAlert.error) {
+      return (
+        <div className="alert alert-danger" role="alert">
+          <b>Opps terjadi kesalahan!</b>. <br /> Silahkan coba beberapa saat lagi yaa! :)
+        </div>
+      );
+    }
+
+    return null;
   };
 
   return (
@@ -73,6 +112,7 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <h2 className="main-font color__primary">Konfirmasi Kehadiran</h2>
               <form className="my_form" onSubmit={handleSubmitForm}>
+                {renderAlert()}
                 <div className="form-group">
                   <p className="labelForm">Nama</p>
                   <input
@@ -127,7 +167,7 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
                   </div>
                 )}
                 <button type="submit" value="Submit" className="btn btn-default buttonForm">
-                  Submit
+                  {loading ? 'Memproses...' : 'Submit'}
                 </button>
               </form>
             </div>

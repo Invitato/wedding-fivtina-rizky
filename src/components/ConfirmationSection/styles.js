@@ -25,11 +25,6 @@ export const styWrapper = css`
       background-color: var(--secondary-bg);
       color: #fff;
     }
-
-    .buttonForm:hover {
-      font-weight: bold;
-      transition: 1s;
-    }
   }
 
   .form-group {
