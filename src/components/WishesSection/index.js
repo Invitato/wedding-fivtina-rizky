@@ -1,15 +1,115 @@
-import React from 'react';
+import React, { useState } from 'react';
 import WishesContainer from './WishesContainer';
+import { styWrapper, styForm } from './styles';
+import { API_HOSTNAME } from '@/constants';
+
+const ALERT = {
+  success: false,
+  error: false,
+};
 
 function WishesSection() {
+  const [loading, setLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(ALERT);
+
+  const [name, setName] = useState('');
+  const [ucapan, setUcapan] = useState('');
+
+  const handleSetState = (e, setState) => {
+    const value = e.target.value;
+    setState(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const config = `tableName=ucapan&action=insert_wish`;
+      const rawResult = await fetch(
+        `${API_HOSTNAME}?${config}&nama=${encodeURIComponent(name)}&wish=${encodeURIComponent(ucapan)}`,
+        {
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          method: 'POST',
+        },
+      );
+
+      const response = await rawResult.json();
+      if (response.success) {
+        setShowAlert({ ...ALERT, success: true });
+        setName('');
+        setUcapan('');
+      } else {
+        setShowAlert({ ...ALERT, error: false });
+        alert('Gagal submit data, silahkan coba lagi!');
+      }
+
+      setLoading(false);
+    } catch (e) {
+      setLoading(false);
+      setShowAlert({ ...ALERT, error: false });
+      alert('Gagal submit data, silahkan coba lagi!');
+    }
+  };
+
+  const renderAlert = () => {
+    if (showAlert.success) {
+      return (
+        <div className="alert alert-success" role="alert">
+          <b>Data berhasil disubmit ke database kami</b>. <br /> Terima kasih atas konfirmasinya! :)
+        </div>
+      );
+    }
+
+    if (showAlert.error) {
+      return (
+        <div className="alert alert-danger" role="alert">
+          <b>Opps terjadi kesalahan!</b>. <br /> Silahkan coba beberapa saat lagi yaa! :)
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
-    <div id="fh5co-testimonial">
+    <>
       <div className="container">
         <div className="row">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <h2 className="main-font">Dari Sahabat</h2>
+              <h2 className="main-font pr-co">Ucapkan Sesuatu</h2>
+              <p>Kirimkan do'a & ucapan untuk kami.</p>
             </div>
+          </div>
+          <div>
+            <form css={styForm} onSubmit={handleSubmit}>
+              {renderAlert()}
+              <div className="form-group">
+                <input
+                  type="Nama"
+                  className="form-control"
+                  min="6"
+                  placeholder="Nama Anda"
+                  value={name}
+                  onChange={(e) => handleSetState(e, setName)}
+                />
+              </div>
+              <div className="form-group">
+                <textarea
+                  type="text"
+                  className="form-control"
+                  placeholder="Doa & Ucapan"
+                  value={ucapan}
+                  onChange={(e) => handleSetState(e, setUcapan)}
+                />
+              </div>
+              <button type="submit" value="Submit" className="btn btn-default buttonForm">
+                {loading ? 'Memproses...' : 'Kirim Ucapan'}
+              </button>
+            </form>
           </div>
           <div className="row">
             <div className="col-md-12">
@@ -18,7 +118,8 @@ function WishesSection() {
           </div>
         </div>
       </div>
-    </div>
+      <div id="fh5co-testimonial" css={styWrapper} />
+    </>
   );
 }
 

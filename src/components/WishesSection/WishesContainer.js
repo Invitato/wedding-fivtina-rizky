@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 
+import { API_HOSTNAME } from '@/constants';
 import WishesItem from './WishesItem';
-import { wishlist } from './wishlist-data';
 import { styButtonWrapper } from './styles';
 
 const INTERVAL_SLIDE = 35000;
@@ -9,7 +9,11 @@ const INTERVAL_SLIDE = 35000;
 function WishesContainer() {
   const [active, setActive] = useState(0);
   const [pauseSlide, setPauseSlide] = useState(false);
+  const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(false);
   const totalWishes = wishlist.length || 0;
+
+  const calledAPI = useRef(false);
 
   const handleSetActive = (isNext = true) => {
     if (isNext) {
@@ -41,14 +45,49 @@ function WishesContainer() {
     }
   }, [active]);
 
+  const getData = async () => {
+    setLoading(true);
+
+    try {
+      const options = {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        method: 'GET',
+      };
+
+      const rawResult = await fetch(`${API_HOSTNAME}?action=read&tableName=ucapan`, options);
+      const response = await rawResult.json();
+
+      if (response.success) {
+        setWishlist(response.data || []);
+      } else {
+        console.log('=> GAGAL');
+      }
+
+      setLoading(false);
+    } catch (e) {
+      setLoading(false);
+    }
+
+    calledAPI.current = true;
+  };
+
   const renderWishlist = () => {
-    return wishlist.map((w, index) => <WishesItem key={index} {...w} isActive={index === active} />);
+    return wishlist.map((w, index) => (
+      <WishesItem key={index} name={w.nama} description={w.ucapan} isActive={index === active} />
+    ));
   };
 
   /** Side effect to autoscroll */
   useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      if (!pauseSlide) {
+      if (!pauseSlide && !calledAPI.current) {
         handleSetNext();
       } else {
         clearInterval(interval);
@@ -58,13 +97,19 @@ function WishesContainer() {
     return () => clearInterval(interval);
   }, [handleSetNext, pauseSlide]);
 
+  if (loading) return <div>Memproses data..</div>;
+
+  if (wishlist.length === 0) return null;
+
   return (
     <div className="wrap-testimony">
       {renderWishlist()}
-      <div css={styButtonWrapper}>
-        <button className="btn btn-sm button-nav" onClick={() => handleSetActive(false)}>{`< Sebelumnya`}</button>
-        <button className="btn btn-sm button-nav" onClick={() => handleSetActive(true)}>{`Selanjutnya >`}</button>
-      </div>
+      {wishlist.length > 1 && (
+        <div css={styButtonWrapper}>
+          <button className="btn btn-sm button-nav" onClick={() => handleSetActive(false)}>{`< Sebelumnya`}</button>
+          <button className="btn btn-sm button-nav" onClick={() => handleSetActive(true)}>{`Selanjutnya >`}</button>
+        </div>
+      )}
     </div>
   );
 }

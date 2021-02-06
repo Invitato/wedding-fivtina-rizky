@@ -71,6 +71,11 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
       const response = await rawResult.json();
       if (response.success) {
         setShowAlert({ ...ALERT, success: true });
+        setName('');
+        setAttended('');
+        setHP('');
+        setAddress('');
+        setTotalGuest('')
       } else {
         setShowAlert({ ...ALERT, error: false });
         alert('Gagal submit data, silahkan coba lagi!');

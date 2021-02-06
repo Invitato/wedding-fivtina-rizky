@@ -1,4 +1,5 @@
 import { css, keyframes } from '@emotion/core';
+import Background from '../PhotoSection/assets/wave.svg';
 
 const animation = keyframes`
   0% { right: -300px; opacity: 0;}
@@ -22,7 +23,7 @@ export const styWrapperItem = css`
     color: #828282;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 0 4px 0;
+    margin: -10px 0 1em 0;
   }
 
   blockquote {
@@ -46,6 +47,11 @@ export const styWrapperItem = css`
 
   .description {
     font-size: 16px !important;
+    text-align: left;
+  }
+
+  .author {
+    text-align: left;
   }
 
   @media screen and (max-width: 400px) {
@@ -63,4 +69,15 @@ export const styButtonWrapper = css`
     font-size: 14px;
     padding: 5px 20px;
   }
+`;
+
+export const styWrapper = css`
+  background-image: url(${Background});
+  background-size: cover;
+  background-position: bottom;
+  min-height: 10vh;
+`;
+
+export const styForm = css`
+  padding: 16px;
 `;
