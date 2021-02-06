@@ -6,7 +6,6 @@ import CopyRight from './CopyRight';
 import EmbedLive from './EmbedLive';
 import { styWrapper } from './styles';
 
-
 function FooterSection({ isInvitation }) {
   return (
     <>

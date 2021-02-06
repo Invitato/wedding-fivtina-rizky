@@ -4,10 +4,11 @@ import LazyLoad from 'react-lazyload';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { photos } from './photo-data';
 import { THE_BRIDE, CUSTOM_ANIMATION } from '@/constants';
+import { styBg } from './styles';
 
 function PhotoSection() {
   return (
-    <div id="fh5co-testimonial">
+    <div id="fh5co-testimonial" css={styBg}>
       <div className="container">
         <div className="row">
           <LazyLoad height={200}>
@@ -21,7 +22,7 @@ function PhotoSection() {
           </LazyLoad>
           <div className="row">
             <div className="col-md-10 col-md-offset-1">
-              <ImageGallery autoPlay infinite lazyLoad items={photos} showBullets={false} />;
+              <ImageGallery autoPlay infinite lazyLoad items={photos} showBullets={false} />
             </div>
           </div>
         </div>
