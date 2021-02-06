@@ -188,11 +188,11 @@ export const styWrapper = css`
   }
 
   .text__date {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: normal;
     margin-bottom: -3rem;
     margin-top: 1rem;
-    margin-bottom: -2rem;
+    margin-bottom: -3rem;
     text-transform: uppercase;
   }
 
