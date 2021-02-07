@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { string, bool } from 'prop-types';
-import { Link } from 'gatsby';
 
-import WithAnimation from '../WithAnimation';
 import useDateCountdown from '@/hooks/useDateCountdown';
+import WithAnimation from '../WithAnimation/UseIntersect';
+
 import { API_HOSTNAME } from '@/constants';
-import { styWrapper, styFlex } from './styles';
+import { styWrapper } from './styles';
+import notes from './notes';
 
 const HADIR = 'Hadir';
 const TIDAK_HADIR = 'Tidak bisa hadir';
@@ -89,6 +90,18 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
     }
   };
 
+  const renderNotes = () => {
+    return (
+      <div>
+        <ul style={{ textAlign: 'left', paddingInlineStart: '24px' }}>
+          {notes.map((note) => {
+            return <li>{note}</li>;
+          })}
+        </ul>
+      </div>
+    );
+  };
+
   const renderAlert = () => {
     if (showAlert.success) {
       return (
@@ -111,13 +124,18 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
 
   return (
     <div css={styWrapper}>
-      <div className="container">
-        <WithAnimation>
-          <div className="row">
-            <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <h2 className="main-font color__primary" style={{ marginTop: '20px' }}>
-                Konfirmasi Kehadiran
-              </h2>
+      <div className="row">
+        <div className="fh5co-heading" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px' }}>
+          <WithAnimation>
+            <h2 className="main-font color__primary text-center" style={{ marginTop: '20px' }}>
+              Konfirmasi Kehadiran
+            </h2>
+          </WithAnimation>
+          <WithAnimation>{renderNotes()}</WithAnimation>
+        </div>
+        <div className="container">
+          <div className="col-md-10 col-md-offset-1 text-center fh5co-heading">
+            <WithAnimation>
               <form className="my_form" onSubmit={handleSubmitForm}>
                 {renderAlert()}
                 <div className="form-group">
@@ -177,9 +195,9 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
                   {loading ? 'Memproses...' : 'Kirim'}
                 </button>
               </form>
-            </div>
+            </WithAnimation>
           </div>
-        </WithAnimation>
+        </div>
       </div>
     </div>
   );

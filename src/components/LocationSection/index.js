@@ -18,7 +18,9 @@ function LocationSection() {
                   </strong>
                   <br />
                 </p>
-                <p style={{ fontSize: '1.3rem', margin: '0' }}>{GOOGLE_MAPS_ADDRESS}</p>
+                <p style={{ fontSize: '1.3rem', margin: '-16px 0 0 0', color: 'var(--font-primary)' }}>
+                  {GOOGLE_MAPS_ADDRESS}
+                </p>
               </WithAnimation>
             </div>
           </div>
