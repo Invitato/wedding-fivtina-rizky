@@ -18,15 +18,15 @@ function GiftCard() {
                 Amplop Digital
               </h2>
               <p>
-                Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih kepada mempelai dan keluarga <br /> dapat melakukan
-                QR Code uang elektronik berikut:
+                Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih kepada mempelai dan keluarga <br /> dapat
+                melakukan QR Code uang elektronik berikut:
               </p>
             </div>
           </WithAnimation>
           <WithAnimation delay={100}>
             <div className="img">
-              <img src={OVO} className="img__ovo" />
-              <img src={LinkAja} className="img__linkaja" />
+              <img src={OVO} className="img__ovo" width="200px" height="auto" />
+              <img src={LinkAja} className="img__linkaja" width="200px" height="auto" />
             </div>
             <p className="text-center" style={{ color: 'black' }}>
               Atas Nama Akun: <b>M Rizky Pratama</b>

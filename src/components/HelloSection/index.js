@@ -26,7 +26,7 @@ function HelloSection({ isInvitation }) {
           <div className="row">
             <WithAnimation delay={300}>
               <div className="col-md-8 col-md-offset-2 text-center">
-                <img src={Bride} className="img__bride" />
+                <img src={Bride} className="img__bride" width="160px" height="auto" />
                 <h3 className="main-font text__bride">{GIRL_NAME}</h3>
                 <p className="parent" dangerouslySetInnerHTML={{ __html: GIRL_PARENT_NAME }} />
               </div>
@@ -40,7 +40,7 @@ function HelloSection({ isInvitation }) {
           <div className="row">
             <WithAnimation delay={500}>
               <div className="col-md-8 col-md-offset-2 text-center">
-                <img src={Grom} className="img__bride" />
+                <img src={Grom} className="img__bride" width="160px" height="auto" />
                 <h3 className="main-font text__groom">{BOY_NAME}</h3>
                 <p className="parent" dangerouslySetInnerHTML={{ __html: BOY_PARENT_NAME }} />
               </div>
