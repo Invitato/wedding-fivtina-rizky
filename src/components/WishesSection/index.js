@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+import WithAnimation from '../WithAnimation/UseIntersect';
 import WishesContainer from './WishesContainer';
 import { styWrapper, styForm } from './styles';
 import { API_HOSTNAME } from '@/constants';
@@ -131,44 +133,50 @@ function WishesSection() {
     <>
       <div className="container">
         <div className="row">
-          <div className="row">
-            <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <h2 className="main-font pr-co">Ucapkan Sesuatu</h2>
-              <p>Kirimkan do'a & ucapan untuk kami.</p>
-            </div>
-          </div>
-          <div>
-            <form css={styForm} onSubmit={handleSubmit}>
-              {renderAlert()}
-              <div className="form-group">
-                <input
-                  type="Nama"
-                  className="form-control"
-                  min="6"
-                  placeholder="Nama Anda"
-                  value={name}
-                  onChange={(e) => handleSetState(e, setName)}
-                />
+          <WithAnimation>
+            <div className="row">
+              <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2 className="main-font pr-co">Ucapkan Sesuatu</h2>
+                <p>Kirimkan do'a & ucapan untuk kami.</p>
               </div>
-              <div className="form-group">
-                <textarea
-                  type="text"
-                  className="form-control"
-                  placeholder="Doa & Ucapan"
-                  value={ucapan}
-                  onChange={(e) => handleSetState(e, setUcapan)}
-                />
-              </div>
-              <button type="submit" value="Submit" className="btn btn-default buttonForm">
-                {loading ? 'Memproses...' : 'Kirim Ucapan'}
-              </button>
-            </form>
-          </div>
-          <div className="row">
-            <div className="col-md-12">
-              {loadingGet ? <p className="text-center">Memproses data..</p> : <WishesContainer wishlist={wishlist} />}
             </div>
-          </div>
+          </WithAnimation>
+          <WithAnimation delay={200}>
+            <div>
+              <form css={styForm} onSubmit={handleSubmit}>
+                {renderAlert()}
+                <div className="form-group">
+                  <input
+                    type="Nama"
+                    className="form-control"
+                    min="6"
+                    placeholder="Nama Anda"
+                    value={name}
+                    onChange={(e) => handleSetState(e, setName)}
+                  />
+                </div>
+                <div className="form-group">
+                  <textarea
+                    type="text"
+                    className="form-control"
+                    placeholder="Doa & Ucapan"
+                    value={ucapan}
+                    onChange={(e) => handleSetState(e, setUcapan)}
+                  />
+                </div>
+                <button type="submit" value="Submit" className="btn btn-default buttonForm">
+                  {loading ? 'Memproses...' : 'Kirim Ucapan'}
+                </button>
+              </form>
+            </div>
+          </WithAnimation>
+          <WithAnimation>
+            <div className="row">
+              <div className="col-md-12">
+                {loadingGet ? <p className="text-center">Memproses data..</p> : <WishesContainer wishlist={wishlist} />}
+              </div>
+            </div>
+          </WithAnimation>
         </div>
       </div>
       <div id="fh5co-testimonial" css={styWrapper} />
