@@ -25,8 +25,8 @@ function HelloSection({ isInvitation }) {
                   "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu
                   sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih
                   dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
-                  berfikir." <br />
-                  (Qs. Ar-Ruum: 21)
+                  berfikir." <br /> <br />
+                  (QS. Ar-Rum : 21)
                 </p>
               </WithAnimation>
             </div>

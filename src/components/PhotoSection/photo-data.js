@@ -13,9 +13,7 @@ import G12 from './assets/12.jpeg';
 import G13 from './assets/13.jpeg';
 import G15 from './assets/15.jpeg';
 import G16 from './assets/16.jpeg';
-import G17 from './assets/17.jpeg';
 import G21 from './assets/21.jpeg';
-import G24 from './assets/24.jpeg';
 import G26 from './assets/26.jpeg';
 import G28 from './assets/28.jpeg';
 
@@ -57,16 +55,8 @@ export const photos = [
     thumbnail: G16,
   },
   {
-    original: G17,
-    thumbnail: G17,
-  },
-  {
     original: G21,
     thumbnail: G21,
-  },
-  {
-    original: G24,
-    thumbnail: G24,
   },
   {
     original: G26,

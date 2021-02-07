@@ -89,4 +89,7 @@ export const styWrapper = css`
 
 export const styForm = css`
   padding: 16px;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
 `;

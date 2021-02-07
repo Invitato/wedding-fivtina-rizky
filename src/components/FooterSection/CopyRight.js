@@ -14,7 +14,7 @@ function CopyRight() {
         <div className="row">
           <div className="col-md-12 text-center">
             <p style={{ fontSize: '12px' }}>
-              &copy; 2020 {THE_BRIDE}. All Rights Reserved. <br />
+              &copy; {new Date().getFullYear()} {THE_BRIDE}. All Rights Reserved. <br />
               Song by{' '}
               <a href={SOUND_URL} {...REFERER} className="pr-co" dangerouslySetInnerHTML={{ __html: SOUND_BY }} />
               <br />

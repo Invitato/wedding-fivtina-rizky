@@ -2,6 +2,7 @@ import React from 'react';
 
 import WishesSection from '@components/WishesSection';
 import WithAnimation from '../WithAnimation';
+import WithAnimationIntersect from '../WithAnimation/UseIntersect';
 import OVO from './assets/ovo.jpeg';
 import LinkAja from './assets/link-aja.jpeg';
 
@@ -12,21 +13,27 @@ function GiftCard() {
     <>
       <div css={styWrapper}>
         <div className="row">
-          <WithAnimation>
-            <div className="text-wish text-center">
+          <WithAnimationIntersect>
+            <div className="text-wish text-center" style={{ padding: '0 16px', maxWidth: '700px', margin: '0 auto' }}>
               <h2 className="main-font pr-co text__title" style={{ fontSize: '4rem' }}>
                 Amplop Digital
               </h2>
-              <p>
-                Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih kepada mempelai dan keluarga <br /> dapat
-                melakukan QR Code uang elektronik berikut:
+              <p style={{ padding: '0 16px' }}>
+                Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih kepada mempelai dan keluarga dapat melakukan
+                QR Code uang elektronik berikut atau berupa hadiah benda yang di inginkan kedua mempelai di link berikut ini<br />
+                <a
+                  style={{ fontWeight: 'normal', textDecoration: 'underline' }}
+                  href="https://www.wishsite.net/wishlist/bjnmhq7t"
+                >
+                  https://www.wishsite.net/wishlist/bjnmhq7t
+                </a>
               </p>
             </div>
-          </WithAnimation>
+          </WithAnimationIntersect>
           <WithAnimation delay={100}>
             <div className="img">
-              <img src={OVO} className="img__ovo" width="200px" height="auto" />
-              <img src={LinkAja} className="img__linkaja" width="200px" height="auto" />
+              <img src={OVO} className="img__ovo" width="200px" height="auto" alt="" />
+              <img src={LinkAja} className="img__linkaja" width="200px" height="auto" alt="" />
             </div>
             <p className="text-center" style={{ color: 'black' }}>
               Atas Nama Akun: <b>M Rizky Pratama</b>

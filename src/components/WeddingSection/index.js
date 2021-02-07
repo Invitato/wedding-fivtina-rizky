@@ -22,7 +22,10 @@ function WeddingSection({ isInvitation }) {
         <div className="row">
           <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
             <WithAnimation>
-              <h3 className="main-font color__primary text__title">Akad Nikah & Resepsi</h3>
+              <h3 className="main-font color__primary text__title">
+                Akad Nikah & <br />
+                Intimate Wedding
+              </h3>
               <p className="text__sub">Insya Allah akan diselenggarakan pada:</p>
             </WithAnimation>
           </div>
@@ -39,7 +42,7 @@ function WeddingSection({ isInvitation }) {
             </WithAnimation>
             <WithAnimation delay={800} className="col-md-6 col-sm-6">
               <WeddingInfoBox
-                title="Resepsi Pernikahan"
+                title="Intimate Wedding"
                 time={WEDDING_RESEPSI_TIME}
                 date={WEDDING_RESEPSI}
                 description={WEDDING_LOCATION}

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import WishesContainer from './WishesContainer';
 import { styWrapper, styForm } from './styles';
 import { API_HOSTNAME } from '@/constants';
-import { wishlist } from './wishlist-data';
 
 const ALERT = {
   success: false,
@@ -56,7 +55,19 @@ function WishesSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name) {
+      alert('Nama tidak boleh kosong!');
+      return;
+    }
+
+    if (!ucapan) {
+      alert('Ucapan tidak boleh kosong!');
+      return;
+    }
+
     setLoading(true);
+
     try {
       const config = `tableName=ucapan&action=insert_wish`;
       const rawResult = await fetch(
