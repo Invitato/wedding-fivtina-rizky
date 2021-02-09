@@ -28,7 +28,7 @@ export const SEO_DESCRIPTION = `Dengan memohon Rahmat dan Ridho Illahi, teriring
  */
 export const GOOGLE_MAPS_LINK = `https://goo.gl/maps/dG427x8mQ8dNbJFu5`;
 export const GOOGLE_MAPS_EMBED = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2612350959166!2d110.4138452147732!3d-6.9784720949586205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b52677c1227%3A0x6f87324171d2ec67!2sPO%20Hotel%20Semarang!5e0!3m2!1sid!2sid!4v1611316428381!5m2!1sid!2sid`;
-export const GOOGLE_MAPS_ADDRESS = 'PO Hotel Semarang, Jl. Pemuda No.118, Semarang';
+export const GOOGLE_MAPS_ADDRESS = 'PO Hotel Semarang, Jl. Pemuda No. 118, Semarang';
 
 /**
  * @constants - epoch time

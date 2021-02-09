@@ -20,12 +20,13 @@ function GiftCard() {
               </h2>
               <p style={{ padding: '0 16px' }}>
                 Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih kepada mempelai dan keluarga dapat melakukan
-                QR Code uang elektronik berikut atau berupa hadiah benda yang di inginkan kedua mempelai di link berikut ini<br />
+                QR Code uang elektronik berikut atau berupa Wedding Gifts yang diinginkan kedua mempelai
                 <a
                   style={{ fontWeight: 'normal', textDecoration: 'underline' }}
                   href="https://www.wishsite.net/wishlist/bjnmhq7t"
+                  target="blank"
                 >
-                  https://www.wishsite.net/wishlist/bjnmhq7t
+                  {` https://www.wishsite.net/wishlist/bjnmhq7t`}
                 </a>
               </p>
             </div>
