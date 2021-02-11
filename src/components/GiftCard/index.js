@@ -14,13 +14,21 @@ function GiftCard() {
       <div css={styWrapper}>
         <div className="row">
           <WithAnimationIntersect>
-            <div className="text-wish text-center" style={{ padding: '0 16px', maxWidth: '700px', margin: '0 auto' }}>
+            <div className="text-wish text-center" style={{ padding: '0 16px', maxWidth: '900px', margin: '0 auto' }}>
               <h2 className="main-font pr-co text__title" style={{ fontSize: '4rem' }}>
                 Amplop Digital
               </h2>
               <p style={{ padding: '0 16px' }}>
                 Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih kepada mempelai dan keluarga dapat melakukan
-                QR Code uang elektronik berikut atau berupa Wedding Gifts yang diinginkan kedua mempelai
+                scan QR Code uang elektronik berikut dan juga melalui rekening:
+                <br />
+                <strong>
+                  Bank Mandiri : 1310013802535 <br />
+                </strong>
+                a.n. Fivtina Marbelanty <br />
+                <strong>Bank BCA : 0095093693 </strong> <br />
+                a.n. Fivtina Marbelanty <br />
+                atau dapat berupa Wedding Gifts yang diinginkan kedua mempelai
                 <a
                   style={{ fontWeight: 'normal', textDecoration: 'underline' }}
                   href="https://www.wishsite.net/wishlist/bjnmhq7t"
