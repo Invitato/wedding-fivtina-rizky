@@ -27,7 +27,7 @@ function GiftCard() {
                 </strong>
                 a.n. Fivtina Marbelanty <br />
                 <strong>Bank BCA : 0095093693 </strong> <br />
-                a.n. Fivtina Marbelanty <br />
+                a.n. Fivtina Marbelanty <br /> <br />
                 atau dapat berupa Wedding Gifts yang diinginkan kedua mempelai
                 <a
                   style={{ fontWeight: 'normal', textDecoration: 'underline' }}
