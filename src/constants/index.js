@@ -42,9 +42,9 @@ export const EPOCH_END_EVENT = 1613887200;
 /**
  * @constants - wedding information
  */
-export const WEDDING_AKAD = 'Minggu, 21 Januari 2021';
+export const WEDDING_AKAD = 'Minggu, 21 Februari 2021';
 export const WEDDING_AKAD_TIME = '08:00 WIB';
-export const WEDDING_RESEPSI = 'Minggu, 21 Januari 2021';
+export const WEDDING_RESEPSI = 'Minggu, 21 Februari 2021';
 export const WEDDING_RESEPSI_TIME = '11.00 WIB';
 export const WEDDING_LOCATION = `PO Hotel <br /> Jl. Pemuda No. 118 Semarang`;
 export const WEDDING_LOCATION_AKAD = WEDDING_LOCATION;

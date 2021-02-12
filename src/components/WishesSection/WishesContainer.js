@@ -1,17 +1,14 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
-import { API_HOSTNAME } from '@/constants';
 import WishesItem from './WishesItem';
 import { styButtonWrapper } from './styles';
 
-const INTERVAL_SLIDE = 35000;
+const INTERVAL_SLIDE = 5000;
 
 function WishesContainer({ wishlist }) {
   const [active, setActive] = useState(0);
   const [pauseSlide, setPauseSlide] = useState(false);
   const totalWishes = wishlist.length || 0;
-
-  const calledAPI = useRef(false);
 
   const handleSetActive = (isNext = true) => {
     if (isNext) {
@@ -41,7 +38,7 @@ function WishesContainer({ wishlist }) {
     } else {
       setActive(active + 1);
     }
-  }, [active]);
+  }, [active, wishlist.length]);
 
   const renderWishlist = () => {
     return wishlist.map((w, index) => (
