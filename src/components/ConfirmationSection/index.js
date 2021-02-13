@@ -33,22 +33,37 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
     setState(value);
   };
 
+  const handleShowAlert = (msg) => {
+    alert(`${msg} tidak boleh kosong!`);
+  };
+
   const handleSubmitForm = async (e) => {
     e.preventDefault();
+    setShowAlert(ALERT);
     if (loading) return;
 
     if (!name) {
-      alert('Nama tidak boleh kosong');
+      handleShowAlert('Nama');
       return;
     }
 
     if (!hp) {
-      alert('Nomor HP tidak boleh kosong');
+      handleShowAlert('Nomor HP');
       return;
     }
 
     if (!address) {
-      alert('Alamat tidak boleh kosong');
+      handleShowAlert('Alamat');
+      return;
+    }
+
+    if (!attended) {
+      handleShowAlert('Konfirmasi hadir');
+      return;
+    }
+
+    if (!totalGuest) {
+      handleShowAlert('Total Tamu');
       return;
     }
 
@@ -73,10 +88,8 @@ function ConfirmationSection({ isInvitation, guestName, codeLink }) {
       if (response.success) {
         setShowAlert({ ...ALERT, success: true });
         setName('');
-        setAttended('');
         setHP('');
         setAddress('');
-        setTotalGuest('');
       } else {
         setShowAlert({ ...ALERT, error: false });
         alert('Gagal submit data, silahkan coba lagi!');
