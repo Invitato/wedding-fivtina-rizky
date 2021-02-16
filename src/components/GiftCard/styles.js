@@ -14,6 +14,13 @@ export const styWrapper = css`
   .img {
     text-align: center;
     margin-bottom: 2em;
+    padding: 0 32px;
+
+    img {
+      border-radius: 24px;
+      width: 100%;
+      max-width: 500px;
+    }
 
     .img__ovo,
     .img__linkaja {

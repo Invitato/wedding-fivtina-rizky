@@ -3,8 +3,7 @@ import React from 'react';
 import WishesSection from '@components/WishesSection';
 import WithAnimation from '../WithAnimation';
 import WithAnimationIntersect from '../WithAnimation/UseIntersect';
-import OVO from './assets/ovo.jpeg';
-import LinkAja from './assets/link-aja.jpeg';
+import QRIS from './assets/qris.png';
 
 import { styWrapper } from './styles';
 
@@ -41,12 +40,8 @@ function GiftCard() {
           </WithAnimationIntersect>
           <WithAnimation delay={100}>
             <div className="img">
-              <img src={OVO} className="img__ovo" width="200px" height="auto" alt="" />
-              <img src={LinkAja} className="img__linkaja" width="200px" height="auto" alt="" />
+              <img src={QRIS} height="auto" alt="" />
             </div>
-            <p className="text-center" style={{ color: 'black' }}>
-              Atas Nama Akun: <b>M Rizky Pratama</b>
-            </p>
           </WithAnimation>
         </div>
       </div>
